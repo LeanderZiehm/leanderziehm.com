@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Install My Tool</title>
+
+  <!-- ====== STYLE ====== -->
+  <style>
+    :root {
+      --bg: #0b0f14;
+      --card: #111827;
+      --accent: #4f46e5;
+      --accent-2: #22d3ee;
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --code-bg: #020617;
+      --border: #1f2933;
+      --radius: 16px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(1200px 600px at 20% -10%, #1e293b, transparent), var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    header {
+      padding: 4rem 1.5rem 3rem;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: clamp(2.2rem, 4vw, 3.2rem);
+      margin-bottom: 0.5rem;
+      letter-spacing: -0.02em;
+    }
+
+    header p {
+      max-width: 680px;
+      margin: 0 auto;
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+
+    main {
+      max-width: 980px;
+      margin: 0 auto 5rem;
+      padding: 0 1.5rem;
+      display: grid;
+      gap: 2rem;
+    }
+
+    .card {
+      background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 2rem;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    }
+
+    .card h2 {
+      margin-top: 0;
+      font-size: 1.4rem;
+    }
+
+    .install-box {
+      position: relative;
+      background: var(--code-bg);
+      border-radius: 14px;
+      padding: 1.25rem 1.25rem 1.25rem 1.5rem;
+      border: 1px solid #020617;
+      overflow-x: auto;
+    }
+
+    .install-box pre {
+      margin: 0;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 0.95rem;
+      color: #e5e7eb;
+    }
+
+    .install-box .prompt {
+      color: var(--accent-2);
+      margin-right: 0.4rem;
+    }
+
+    .copy-btn {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      background: linear-gradient(135deg, var(--accent), #6366f1);
+      border: none;
+      color: white;
+      border-radius: 10px;
+      padding: 0.4rem 0.7rem;
+      cursor: pointer;
+      font-size: 0.8rem;
+    }
+
+    .copy-btn:hover {
+      opacity: 0.9;
+    }
+
+    .steps {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .step {
+      display: flex;
+      gap: 1rem;
+      padding: 1rem;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+    }
+
+    .step-number {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      color: #020617;
+      flex-shrink: 0;
+    }
+
+    footer {
+      text-align: center;
+      padding: 3rem 1rem;
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>My Tool</h1>
+    <p>One‑command install. Open source. No nonsense. Works like the Brave / Homebrew style installers.</p>
+  </header>
+
+  <main>
+
+    <!-- INSTALL CARD -->
+    <section class="card">
+      <h2>Quick Install</h2>
+      <p>Paste this into your terminal:</p>
+
+      <div class="install-box">
+        <button class="copy-btn" onclick="copyInstall()">Copy</button>
+        <pre><span class="prompt">$</span><span id="install-command"></span></pre>
+      </div>
+    </section>
+
+    <!-- STEPS CARD -->
+    <section class="card">
+      <h2>What this does</h2>
+      <div class="steps" id="steps"></div>
+    </section>
+
+  </main>
+
+  <footer>
+    © 2025 • MIT License • Built for GitHub Pages
+  </footer>
+
+  <!-- ====== SCRIPT ====== -->
+  <script>
+    /*
+      EDIT THIS JSON TO MATCH YOUR PROJECT
+    */
+    const installConfig = {
+      installCommand: "curl -fsSL https://example.com/install.sh | sh",
+      steps: [
+        "Download the installer script from the repository",
+        "Verify environment and dependencies",
+        "Install binaries and shell completions",
+        "Add tool to PATH",
+        "Run post-install checks"
+      ]
+    };
+
+    // Render install command
+    document.getElementById("install-command").textContent = installConfig.installCommand;
+
+    // Render steps
+    const stepsContainer = document.getElementById("steps");
+    installConfig.steps.forEach((text, index) => {
+      const div = document.createElement("div");
+      div.className = "step";
+      div.innerHTML = `
+        <div class="step-number">${index + 1}</div>
+        <div>${text}</div>
+      `;
+      stepsContainer.appendChild(div);
+    });
+
+    // Copy button
+    function copyInstall() {
+      navigator.clipboard.writeText(installConfig.installCommand);
+    }
+  </script>
+
+</body>
+</html>
