@@ -1,95 +1,127 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My API Portfolio</title>
-    <script defer src="https://umami.leanderziehm.com/script.js" data-website-id="ad8cf94a-ca19-4fa0-8848-5f248507c376"></script>
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            background-color: #f4f4f9;
-            color: #333;
-        }
-        header {
-            background-color: #4a90e2;
-            color: white;
-            padding: 2rem 1rem;
-            text-align: center;
-        }
-        header h1 {
-            margin: 0;
-            font-size: 2.5rem;
-        }
-        header p {
-            margin-top: 0.5rem;
-            font-size: 1.2rem;
-        }
-        main {
-            max-width: 1200px;
-            margin: 2rem auto;
-            padding: 0 1rem;
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 1.5rem;
-        }
-        .api-card {
-            background-color: white;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-            padding: 1.5rem;
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-        .api-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-        }
-        .api-card h2 {
-            margin-top: 0;
-            font-size: 1.5rem;
-            color: #4a90e2;
-        }
-        .api-card p {
-            margin: 0.5rem 0 1rem 0;
-            color: #555;
-        }
-        .api-card a {
-            text-decoration: none;
-            color: white;
-            background-color: #4a90e2;
-            padding: 0.5rem 1rem;
-            border-radius: 5px;
-            transition: background-color 0.2s;
-        }
-        .api-card a:hover {
-            background-color: #357ABD;
-        }
-        footer {
-            text-align: center;
-            padding: 2rem 1rem;
-            background-color: #333;
-            color: white;
-            margin-top: 2rem;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Leander's APIs</title>
+  <script defer src="https://umami.leanderziehm.com/script.js" data-website-id="ad8cf94a-ca19-4fa0-8848-5f248507c376"></script>
+
+  <!-- ====== STYLE ====== -->
+  <style>
+    :root {
+      --bg: #0b0f14;
+      --card: #111827;
+      --accent: #4f46e5;
+      --accent-2: #22d3ee;
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --border: #1f2933;
+      --radius: 16px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(1200px 600px at 20% -10%, #1e293b, transparent), var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    header {
+      padding: 4rem 1.5rem 3rem;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: clamp(2.2rem, 4vw, 3.2rem);
+      margin-bottom: 0.5rem;
+      letter-spacing: -0.02em;
+    }
+
+    header p {
+      max-width: 680px;
+      margin: 0 auto;
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+
+    main {
+      max-width: 980px;
+      margin: 0 auto 5rem;
+      padding: 0 1.5rem;
+      display: grid;
+      gap: 2rem;
+    }
+
+    .api-card {
+      background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 2rem;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .api-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+    }
+
+    .api-card h2 {
+      margin-top: 0;
+      font-size: 1.5rem;
+      color: var(--accent);
+    }
+
+    .api-card p {
+      color: var(--muted);
+      margin: 0.5rem 0 1rem 0;
+    }
+
+    .api-card a {
+      text-decoration: none;
+      color: white;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      padding: 0.5rem 1rem;
+      border-radius: 10px;
+      transition: opacity 0.2s;
+    }
+
+    .api-card a:hover {
+      opacity: 0.9;
+    }
+
+    footer {
+      text-align: center;
+      padding: 3rem 1rem;
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>My API Portfolio</h1>
-        <p>Explore the APIs I've developed</p>
-    </header>
-    <main>
-        <!-- API Card -->
-        <div class="api-card">
-            <h2>OCR API</h2>
-            <p>A simple Optical Character Recognition API to extract text from images.</p>
-            <a href="https://ocr.api.oracle.leanderziehm.com/" target="_blank">View API</a>
-        </div>
-        <!-- More API cards can be added here -->
-    </main>
-    <footer>
-        &copy; 2025 Leander Ziehm. All rights reserved.
-    </footer>
+
+  <header>
+    <h1>APIs</h1>
+    <p>Explore the APIs I've developed — fast, simple, and ready to integrate.</p>
+  </header>
+
+  <main>
+    <!-- API Card -->
+    <div class="api-card">
+      <h2>OCR API</h2>
+      <p>A simple Optical Character Recognition API to extract text from images.</p>
+      <a href="https://ocr.api.oracle.leanderziehm.com/" target="_blank">View API</a>
+    </div>
+
+    <!-- Add more API cards here -->
+  </main>
+
+  <footer>
+    &copy; 2025 • Leander Ziehm 
+  </footer>
+
 </body>
 </html>
