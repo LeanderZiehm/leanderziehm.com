@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quick Dotfiles Setup</title>
+  <script defer src="https://umami.leanderziehm.com/script.js" data-website-id="ad8cf94a-ca19-4fa0-8848-5f248507c376"></script>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f0f2f5;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      background: #fff;
+      padding: 2rem 3rem;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+      max-width: 600px;
+      text-align: center;
+    }
+
+    h1 {
+      margin-bottom: 1rem;
+      color: #333;
+    }
+
+    p {
+      color: #555;
+      margin-bottom: 1.5rem;
+    }
+
+    pre {
+      background: #f7f7f7;
+      padding: 1rem;
+      border-radius: 8px;
+      overflow-x: auto;
+      text-align: left;
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
+    }
+
+    button {
+      background: #4CAF50;
+      color: white;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background: #45a049;
+    }
+
+    .copied {
+      color: #4CAF50;
+      margin-top: 0.5rem;
+      font-size: 0.9rem;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Quick Dotfiles Setup</h1>
+    <p>Run the following command in your terminal to backup your existing vimrc and download my dotfiles:</p>
+    <pre id="dotfileCmd">mv ~/.vimrc ~/.vimrc.backup.$(date +%Y%m%d%H%M%S) && curl -fsSL https://raw.githubusercontent.com/LeanderZiehm/dotfiles/main/sync/.vimrc -o ~/.vimrc</pre>
+    <button onclick="copyCommand()">Copy Command</button>
+    <div class="copied" id="copiedMsg">Command copied to clipboard!</div>
+  </div>
+
+  <script>
+    function copyCommand() {
+      const command = document.getElementById('dotfileCmd').textContent;
+      navigator.clipboard.writeText(command).then(() => {
+        const msg = document.getElementById('copiedMsg');
+        msg.style.display = 'block';
+        setTimeout(() => msg.style.display = 'none', 2000);
+      }).catch(err => {
+        console.error('Failed to copy: ', err);
+      });
+    }
+  </script>
+</body>
+</html>
