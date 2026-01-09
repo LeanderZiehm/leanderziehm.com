@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+
+<head>
+  <title>Scalar API Reference</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+
+<body>
+  <div id="app"></div>
+  <!-- Load the Script -->
+  <script src="https://cdn.jsdelivr.net/npm/@scalar/api-reference"></script>
+  <!-- Initialize the Scalar API Reference -->
+  <script>
+    // The URL of the OpenAPI/Swagger document
+    // 
+    // {url: 'https://ocr.api.oracle.leanderziehm.com/openapi.json'},
+    Scalar.createApiReference('#app', {
+
+      showDeveloperTools: 'never',
+      hideClientButton: true,
+
+      // title: 'Scalar Galaxy', // optional, would fallback to 'API #1'
+      // slug: 'scalar-galaxy', // optiona
+      // {url: 'https://tracker-api.leanderziehm.com/openapi.json'},
+      sources: [
+
+        { url: 'https://todo-api.leanderziehm.com/docs/json', title: 'Todo API', slug: 'todo-api' },
+        { url: 'https://tracker-api.leanderziehm.com/openapi.json', title: 'Tracker API', slug: 'tracker-api' },
+        { url: 'https://llm.leanderziehm.com/openapi.json', title: 'LLM API', slug: 'llm-api', },
+        { url: ' https://images.leanderziehm.com/openapi.json', title: 'S3 Image API', slug: 'image-api', },
+
+      ]
+
+    })
+  </script>
+</body>
+
+</html>
