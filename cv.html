@@ -43,6 +43,8 @@
       color: #e6eef6;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
+    }
+    .container{
       line-height: 1.45;
       padding: 40px 16px;
       display: flex;
@@ -419,6 +421,8 @@
       });
   </script>
   <!-- NAVBAR COMPONENT -->
+
+  <div class="container">
   <div class="wrap">
 
     <header>
@@ -660,7 +664,7 @@
       © <span id="year"></span> Leander Ziehm — Built with care.
     </footer>
   </div>
-
+  </div>
   <script>
     document.getElementById('year').innerText = new Date().getFullYear();
     function handleSubmit(e) {
