@@ -8,6 +8,17 @@
 </head>
 
 <body>
+  <!-- NAVBAR COMPONENT -->
+  <div id="navbar"></div>
+  <div class="navbar-spacer"></div>
+  <script>
+    fetch('/components/navbar.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('navbar').innerHTML = data;
+      });
+  </script>
+  <!-- NAVBAR COMPONENT -->
   <div id="app"></div>
 
   <script src="https://cdn.jsdelivr.net/npm/@scalar/api-reference"></script>
@@ -17,7 +28,9 @@
       { url: 'https://todo-api.leanderziehm.com/docs/json', title: 'Todo API' },
       { url: 'https://tracker-api.leanderziehm.com/openapi.json', title: 'Tracker API' },
       { url: 'https://llm.leanderziehm.com/openapi.json', title: 'LLM API' },
-      { url: 'https://images.leanderziehm.com/openapi.json', title: 'S3 Image API' }
+      { url: 'https://images.leanderziehm.com/openapi.json', title: 'S3 Image API' },
+      { url: 'https://notify.leanderziehm.com/openapi.json', title: 'Nofify' },
+      // { url: 'https://habits-api.leanderziehm.com/openapi.json', title: 'Habits' }
     ];
 
     async function fetchAndCombineAPIs(urls) {
@@ -67,11 +80,11 @@
 
     fetchAndCombineAPIs(apiUrls).then((combinedOpenAPI) => {
       Scalar.createApiReference('#app', {
-          servers: [
-    {
-      url: 'https://tracker-api.leanderziehm.com/',
-      description: 'Production',
-    }],
+        servers: [
+          {
+            url: 'https://tracker-api.leanderziehm.com/',
+            description: 'Production',
+          }],
         showDeveloperTools: 'never',
         hideClientButton: true,
         content: JSON.stringify(combinedOpenAPI, null, 2)

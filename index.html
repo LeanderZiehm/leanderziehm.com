@@ -1,16 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Leander Ziehm – Personal Page</title>
-  <meta name="description" content="Leander Ziehm – AI Intern at BMW, AI student, backend-focused full‑stack developer specializing in TypeScript, Node.js, and PostgreSQL." />
+  <meta name="description"
+    content="Leander Ziehm – AI Intern at BMW, AI student, backend-focused full‑stack developer specializing in TypeScript, Node.js, and PostgreSQL." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
 
-  <script defer src="https://umami.leanderziehm.com/script.js" data-website-id="ad8cf94a-ca19-4fa0-8848-5f248507c376"></script>
+  <script defer src="https://umami.leanderziehm.com/script.js"
+    data-website-id="ad8cf94a-ca19-4fa0-8848-5f248507c376"></script>
 
   <style>
     :root {
@@ -28,7 +32,8 @@
       box-sizing: border-box;
     }
 
-    html, body {
+    html,
+    body {
       margin: 0;
       padding: 0;
       font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
@@ -144,7 +149,7 @@
     }
 
     .card {
-      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0)), var(--card);
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0)), var(--card);
       border: 1px solid var(--border);
       border-radius: 16px;
       padding: 1.3rem 1.4rem 1.5rem;
@@ -185,16 +190,16 @@
     .links a {
       margin-right: 1rem;
       font-weight: 500;
-    }    
+    }
   </style>
-
-  <link rel="stylesheet" href="/components/navbar.css">
 </head>
+
 <body>
   <div class="container">
 
+    <!-- NAVBAR COMPONENT -->
     <div id="navbar"></div>
-    
+    <div class="navbar-spacer"></div>
     <script>
       fetch('/components/navbar.html')
         .then(response => response.text())
@@ -202,27 +207,34 @@
           document.getElementById('navbar').innerHTML = data;
         });
     </script>
-      
+    <!-- NAVBAR COMPONENT -->
+
     <header>
       <span class="badge">AI Intern @ BMW · Backend‑Focused Full‑Stack</span>
       <h1>Hi 👋, I'm Leander Ziehm</h1>
       <p>
-        I’m an Artificial Intelligence student (B.Sc.) in my 6th semester, set to graduate in <strong>2027</strong>, and currently working as an <strong>AI Intern at BMW</strong>.
-        My main focus is building <strong>robust, secure, and performant web applications</strong>, with a strong emphasis on backend architecture and database‑driven systems.
+        I’m an Artificial Intelligence student (B.Sc.) in my 6th semester, set to graduate in <strong>2027</strong>, and
+        currently working as an <strong>AI Intern at BMW</strong>.
+        My main focus is building <strong>robust, secure, and performant web applications</strong>, with a strong
+        emphasis on backend architecture and database‑driven systems.
       </p>
 
       <div class="hero-actions">
         <a class="button" href="mailto:hello@leanderziehm.com">Contact Me</a>
-        <a class="button secondary" href="https://www.linkedin.com/in/leanderziehm/" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="button secondary" href="https://www.linkedin.com/in/leanderziehm/" target="_blank"
+          rel="noopener">LinkedIn</a>
       </div>
     </header>
 
     <section>
       <h2>About Me</h2>
       <p>
-        My tech stack revolves around <strong>TypeScript</strong>, <strong>Node.js</strong>, <strong>Fastify</strong>, <strong>PostgreSQL</strong>, and <strong>Linux</strong>.
-        I enjoy going deep into how things work at a language and system level, especially around performance, debugging, logging, and backend architecture.
-        While I lean backend, I’m comfortable building full‑stack applications and can step into <strong>React</strong> or <strong>Angular</strong> when needed.
+        My tech stack revolves around <strong>TypeScript</strong>, <strong>Node.js</strong>, <strong>Fastify</strong>,
+        <strong>PostgreSQL</strong>, and <strong>Linux</strong>.
+        I enjoy going deep into how things work at a language and system level, especially around performance,
+        debugging, logging, and backend architecture.
+        While I lean backend, I’m comfortable building full‑stack applications and can step into <strong>React</strong>
+        or <strong>Angular</strong> when needed.
       </p>
 
       <div class="stack">
@@ -267,10 +279,10 @@
     </footer>
   </div>
 
-  <script>    
+  <script>
     const projects = [
 
-            {
+      {
         title: "LoveLingo",
         description: "Language learning and practice platform.",
         url: "https://lovelingo.leanderziehm.com",
@@ -282,13 +294,13 @@
       },
 
 
-        {
+      {
         title: "Typer",
         description: "Practice 10 finger touch typing adjusting to your skill level.",
         url: "https://typer.leanderziehm.com",
       },
 
-        {
+      {
         title: "Pastebins",
         description: "Paste text into your own password protected custom url to securely share it with specific people",
         url: "https://pastebins.leanderziehm.com/",
@@ -298,7 +310,7 @@
         description: "Tool to generate and download code packages.",
         url: "https://chatgpt-code-zip.leanderziehm.com",
       },
-            {
+      {
         title: "Web Notepad",
         description: "Task manager and text editor in one.",
         url: "https://notes.leanderziehm.com/",
@@ -312,10 +324,10 @@
 
     ];
 
-    
-const archive = [
 
-  {
+    const archive = [
+
+      {
         title: "tandemexchange.de",
         description: "Language Learning Web APP",
         url: "https://www.tandemexchange.de/",
@@ -336,7 +348,7 @@ const archive = [
         description: "Bookmark manager and viewer.",
         url: "https://bookmarks.leanderziehm.com",
       },
-   {
+      {
         title: "PDF",
         description: "PDF processing web app.",
         url: "https://pdf.leanderziehm.com",
@@ -351,8 +363,8 @@ const archive = [
         description: "LLM anonymization recommender",
         url: "https://llmano.leanderziehm.com",
       },
-  
-]
+
+    ]
 
     const grid = document.getElementById('projects-grid');
 
@@ -374,4 +386,5 @@ const archive = [
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 </body>
+
 </html>

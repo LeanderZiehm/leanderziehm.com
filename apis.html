@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Leander's APIs</title>
-  <script defer src="https://umami.leanderziehm.com/script.js" data-website-id="ad8cf94a-ca19-4fa0-8848-5f248507c376"></script>
+  <script defer src="https://umami.leanderziehm.com/script.js"
+    data-website-id="ad8cf94a-ca19-4fa0-8848-5f248507c376"></script>
 
   <!-- ====== TODO: show if the api is up or down 200 status code or not. and uptime since when and downtime percentage. ====== -->
   <!-- ====== STYLE ====== -->
@@ -20,7 +22,9 @@
       --radius: 16px;
     }
 
-    * { box-sizing: border-box; }
+    * {
+      box-sizing: border-box;
+    }
 
     body {
       margin: 0;
@@ -31,7 +35,7 @@
     }
 
     header {
-      padding: 4rem 1.5rem 3rem;
+      padding: 1rem 1rem 1rem;
       text-align: center;
     }
 
@@ -57,17 +61,17 @@
     }
 
     .api-card {
-      background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.01));
       border: 1px solid var(--border);
       border-radius: var(--radius);
       padding: 2rem;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
       transition: transform 0.2s, box-shadow 0.2s;
     }
 
     .api-card:hover {
       transform: translateY(-5px);
-      box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
     }
 
     .api-card h2 {
@@ -101,20 +105,20 @@
       font-size: 0.85rem;
     }
   </style>
-
-  <link rel="stylesheet" href="/components/navbar.css">
 </head>
+
 <body>
-
+  <!-- NAVBAR COMPONENT -->
   <div id="navbar"></div>
-
-<script>
-  fetch('/components/navbar.html')
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById('navbar').innerHTML = data;
-    });
-</script>
+  <div class="navbar-spacer"></div>
+  <script>
+    fetch('/components/navbar.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('navbar').innerHTML = data;
+      });
+  </script>
+  <!-- NAVBAR COMPONENT -->
 
   <header>
     <h1>APIs</h1>
@@ -122,32 +126,51 @@
   </header>
 
   <main>
-       <!-- TODO at some point make this dynamic out of a json variable. -->
+    <!-- TODO at some point make this dynamic out of a json variable. -->
     <!-- API Card -->
-    <div class="api-card">
-      <h2>OCR API</h2>
-      <p>A simple Optical Character Recognition API to extract text from images.</p>
-      <a href="https://ocr.api.oracle.leanderziehm.com/" target="_blank">View API</a>
-    </div>
+    <!-- <div class="api-card">
+  <h2>OCR API</h2>
+  <p>A simple Optical Character Recognition API to extract text from images.</p>
+  <a href="https://ocr.api.oracle.leanderziehm.com/" target="_blank">View API</a>
+</div> -->
 
     <div class="api-card">
       <h2>Track Events, Timers and Metrics API</h2>
-      <p>Track Events, Timers and Metrics with this api</p>
-      <a href="https://tracker.api.oracle.leanderziehm.com/" target="_blank">View API</a>
+      <p>Track Events, Timers and Metrics with this API.</p>
+      <a href="https://tracker-api.leanderziehm.com/" target="_blank">View API</a>
+    </div>
+    <!-- 
+<div class="api-card">
+  <h2>.pptx to .md API</h2>
+  <p>Convert PowerPoint presentations to Markdown to feed them to AI LLMs like ChatGPT.</p>
+  <a href="https://pptx-to-md.api.oracle.leanderziehm.com/" target="_blank">View API</a>
+</div> -->
+
+    <!-- Existing APIs from OpenAPI spec -->
+    <div class="api-card">
+      <h2>Todo API</h2>
+      <p>Manage and track simple text tasks.</p>
+      <a href="https://todo-api.leanderziehm.com/docs/json" target="_blank">View API</a>
     </div>
 
     <div class="api-card">
-      <h2>.pptx to .md API</h2>
-      <p>Convert powerpoint presentations to markdownt to feed them to AI LLMs like Chatgpt </p>
-      <a href="https://pptx-to-md.api.oracle.leanderziehm.com/" target="_blank">View API</a>
+      <h2>LLM API</h2>
+      <p>Access your custom large language models, chat, and reorder them.</p>
+      <a href="https://llm.leanderziehm.com/openapi.json" target="_blank">View API</a>
     </div>
 
-    <!-- Add more API cards here -->
+    <div class="api-card">
+      <h2>S3 Image API</h2>
+      <p>Upload and retrieve images from your S3 storage.</p>
+      <a href="https://images.leanderziehm.com/openapi.json" target="_blank">View API</a>
+    </div>
+
   </main>
 
   <footer>
-    &copy; 2025 • Leander Ziehm 
+    &copy; 2025 • Leander Ziehm
   </footer>
 
 </body>
+
 </html>

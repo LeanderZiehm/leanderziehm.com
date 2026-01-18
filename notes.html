@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8" />
   <title>Notes</title>
@@ -7,26 +8,46 @@
   <link rel="stylesheet" href="./styles/base.css">
   <style>
     body {
+      font-family: system-ui, sans-serif;
+    }
+    #content{
       max-width: 800px;
       margin: 2rem auto;
-      font-family: system-ui, sans-serif;
       line-height: 1.6;
     }
+
     pre {
       background: #f6f8fa;
       padding: 1rem;
       overflow-x: auto;
     }
+
     a {
       color: #0366d6;
       text-decoration: none;
     }
+
     a:hover {
       text-decoration: underline;
     }
   </style>
+  <link rel="stylesheet" href="/components/navbar.css">
 </head>
+
 <body>
+
+  <!-- NAVBAR COMPONENT -->
+  <div id="navbar"></div>
+  <div class="navbar-spacer"></div>
+  <script>
+    fetch('/components/navbar.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('navbar').innerHTML = data;
+      });
+  </script>
+  <!-- NAVBAR COMPONENT -->
+
   <main id="content">Loading…</main>
 
   <script>
@@ -55,7 +76,7 @@
         e.preventDefault();
         // For simplicity, always treat relative links as another Markdown file
         const newFile = href.replace(/^\/|\.md$/g, "") + ".md";
-        
+
         const mdPath = `https://raw.githubusercontent.com/LeanderZiehm/notes/refs/heads/main/${newFile}`;
         try {
           const res = await fetch(mdPath);
@@ -73,4 +94,5 @@
     loadMarkdown();
   </script>
 </body>
+
 </html>
