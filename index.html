@@ -195,20 +195,19 @@
 </head>
 
 <body>
+
+  <!-- NAVBAR COMPONENT -->
+  <div id="navbar"></div>
+  <div class="navbar-spacer"></div>
+  <script>
+    fetch('/components/navbar.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('navbar').innerHTML = data;
+      });
+  </script>
+  <!-- NAVBAR COMPONENT -->
   <div class="container">
-
-    <!-- NAVBAR COMPONENT -->
-    <div id="navbar"></div>
-    <div class="navbar-spacer"></div>
-    <script>
-      fetch('/components/navbar.html')
-        .then(response => response.text())
-        .then(data => {
-          document.getElementById('navbar').innerHTML = data;
-        });
-    </script>
-    <!-- NAVBAR COMPONENT -->
-
     <header>
       <span class="badge">AI Intern @ BMW · Backend‑Focused Full‑Stack</span>
       <h1>Hi 👋, I'm Leander Ziehm</h1>
